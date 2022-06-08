@@ -1,33 +1,19 @@
-const piece01 = document.querySelector('.pos-1');
-const piece02 = document.querySelector('.pos-2');
-const piece03 = document.querySelector('.pos-3');
-const piece04 = document.querySelector('.pos-4');
-const piece05 = document.querySelector('.pos-5');
-const piece06 = document.querySelector('.pos-6');
-const piece07 = document.querySelector('.pos-7');
-const piece08 = document.querySelector('.pos-8');
-const piece09 = document.querySelector('.pos-9');
-const piece10 = document.querySelector('.pos-10');
-const piece11 = document.querySelector('.pos-11');
-const piece12 = document.querySelector('.pos-12');
-const piece13 = document.querySelector('.pos-13');
-const piece14 = document.querySelector('.pos-14');
-const piece15 = document.querySelector('.pos-15');
-const piece16 = document.querySelector('.pos-16');
+//初期化処理(すべてのピースをランダムに配置する)
+for (let n = 1; n <= 16; n = n + 1) {
+    const piece = document.querySelector('.pos-' + n);
+  
+    // MEMO: 1 ～ 16 でランダムに数値を決めると、番号が被る場合がある
+    piece.style.order = parseInt(Math.random() * 16) + 1;
+  }
 
-piece01.style.order = parseInt(Math.random() * 16) + 1;
-piece02.style.order = parseInt(Math.random() * 16) + 1;
-piece03.style.order = parseInt(Math.random() * 16) + 1;
-piece04.style.order = parseInt(Math.random() * 16) + 1;
-piece05.style.order = parseInt(Math.random() * 16) + 1;
-piece06.style.order = parseInt(Math.random() * 16) + 1;
-piece07.style.order = parseInt(Math.random() * 16) + 1;
-piece08.style.order = parseInt(Math.random() * 16) + 1;
-piece09.style.order = parseInt(Math.random() * 16) + 1;
-piece10.style.order = parseInt(Math.random() * 16) + 1;
-piece11.style.order = parseInt(Math.random() * 16) + 1;
-piece12.style.order = parseInt(Math.random() * 16) + 1;
-piece13.style.order = parseInt(Math.random() * 16) + 1;
-piece14.style.order = parseInt(Math.random() * 16) + 1;
-piece15.style.order = parseInt(Math.random() * 16) + 1;
-piece16.style.order = parseInt(Math.random() * 16) + 1;
+  //ピースがクリックしたときに実行する処理(関数)
+function pieceClikHandler(event){
+    console.log('ピースがクリックされました');
+    console.log(event.target);
+}
+
+for (let p = 1; p<= 16; p = p + 1) {
+const piece01 = document.querySelector('.pos-'+p);
+
+piece01.addEventListener('click',pieceClikHandler);
+}
